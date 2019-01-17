@@ -71,6 +71,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
+    "classnames": "^2.2.6",
     "immer": "^1.9.3",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
