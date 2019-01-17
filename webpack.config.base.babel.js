@@ -11,18 +11,16 @@ import reporter from 'postcss-reporter';
 import browserReporter from 'postcss-browser-reporter';
 
 const postCSSLoaderOptions = {
-    plugins: (loader) => [
-      stylelint(),
-      require('postcss-import')({ root: loader.resourcePath }),
-      flexbugs(),
-      easing(),
-      mixin(),
-      autoprefixer(
-        {browsers: conf.browsers, grid: true}
-      ),
-      csswring(),
-      reporter(),
-      browserReporter({disabled: isProd}),
+    plugins: loader => [
+        require('postcss-import')({ root: loader.resourcePath }),
+        flexbugs(),
+        easing(),
+        mixin(),
+        autoprefixer(
+            {browsers: conf.browsers}
+        ),
+        csswring(),
+        reporter()
     ]
 };
   
