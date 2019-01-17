@@ -10,7 +10,7 @@ import { app, appCount, appNumber, appCounts } from './style.sass';
 class App extends Component {
     render() {
         const { count, countUp, countDown } = this.props;
-        const countColor = {
+        const buttonColor = {
             green: 'green',
             red: 'red'
         };
@@ -23,14 +23,14 @@ class App extends Component {
                         <Button
                             name="+"
                             onCount={countUp}
-                            color={countColor.green}
+                            color={buttonColor.green}
                         />
                     </div>
                     <div className={appCounts}>
                         <Button
                             name="-"
                             onCount={countDown}
-                            color={countColor.red}
+                            color={buttonColor.red}
                         />
                     </div>
                 </div>
