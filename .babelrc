@@ -1,0 +1,28 @@
+{
+    "presets": [
+        ["@babel/preset-env",
+            {
+                "targets": {
+                    "browsers": [
+                        "last 2 versions",
+                        "safari >= 7"
+                    ]
+                }
+            }
+        ],
+        "@babel/preset-react",
+        "@babel/preset-flow"
+    ],
+    "plugins": [
+        "react-hot-loader/babel",
+        "transform-class-properties",
+        "@babel/plugin-syntax-dynamic-import",
+        [
+            "flow-runtime",
+            {
+              "assert": true,
+              "annotate": true
+            }
+        ]
+    ]
+}
