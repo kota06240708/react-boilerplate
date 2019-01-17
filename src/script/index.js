@@ -5,6 +5,7 @@ import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 import store from './store';
 import '@babel/polyfill';
+import '../styles/_base.sass';
 
 const render = Component => {
     ReactDOM.render(
