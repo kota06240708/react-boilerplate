@@ -8,7 +8,7 @@
     "start": "node -r @babel/register server.js --watch",
     "prebuild": "rimraf ./docs",
     "build": "cross-env NODE_ENV=docs gulp build",
-    "script:lint": "eslint --fix --ext .js --ignore-path .gitignore .",
+    "script:lint": "eslint --fix --ext .js --ignore-path .gitignore --ignore-pattern '/docs/*' .",
     "lint-staged": "lint-staged"
   },
   "husky": {
