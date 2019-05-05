@@ -9,7 +9,7 @@ import Button from './button';
 import { getCountState } from '../selectors';
 
 type Props = {
-  count: ?number,
+  count: number,
   countUp: () => void,
   countDown: () => void
 };
@@ -17,11 +17,6 @@ type Props = {
 type State = {
   plus: string,
   minus: string
-};
-
-const buttonColor = {
-  green: 'green',
-  red: 'red',
 };
 
 const ButtonWrap = styled.div`
@@ -42,6 +37,12 @@ class App extends Component {
 
   render() {
     const { count, countUp, countDown } = this.props;
+
+    const buttonColor = {
+      green: 'green',
+      red: 'red',
+    };
+
     return (
       <Fragment>
         <p>{count}</p>
