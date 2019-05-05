@@ -1,3 +1,5 @@
+import conf from '../config';
+
 import path from 'path';
 
 import autoprefixer from 'autoprefixer';
