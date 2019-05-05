@@ -7,14 +7,14 @@ import store from './store';
 import '@babel/polyfill';
 import '../styles/_base.sass';
 
-const render = Component => {
+const render = (Component) => {
   ReactDOM.render(
     <AppContainer>
       <Provider store={store}>
         <Component />
       </Provider>
     </AppContainer>,
-    document.getElementById('root')
+    document.getElementById('root'),
   );
 };
 

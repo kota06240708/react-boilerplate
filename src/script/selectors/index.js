@@ -4,5 +4,5 @@ const getCount = state => state.count;
 
 export const getCountState = createSelector(
   getCount,
-  state => state.count
+  state => state.count,
 );

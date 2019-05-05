@@ -14,7 +14,7 @@ const Button = (props: Props) => {
   const className = classNames({
     [button]: true,
     [isGreen]: color === 'green',
-    [isRed]: color === 'red'
+    [isRed]: color === 'red',
   });
 
   return (

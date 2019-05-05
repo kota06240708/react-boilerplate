@@ -7,10 +7,11 @@
     "postinstall": "flow-typed install --skip",
     "start": "node -r @babel/register server.js --watch",
     "prebuild": "rimraf ./docs",
-		"build": "cross-env NODE_ENV=docs gulp build",
-		"script:lint": "eslint --fix --ext .js --ignore-path .gitignore ."
-	},
-	"husky": {
+    "build": "cross-env NODE_ENV=docs gulp build",
+		"script:lint": "eslint --fix --ext .js --ignore-path .gitignore .",
+		"lint-staged": "lint-staged"
+  },
+  "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
@@ -68,6 +69,7 @@
     "postcss-loader": "^3.0.0",
     "postcss-mixins": "^6.2.1",
     "postcss-reporter": "^6.0.0",
+    "pre-commit": "^1.2.2",
     "prerender-spa-plugin": "^3.4.0",
     "prettier": "^1.15.3",
     "prettier-webpack-plugin": "^1.2.0",

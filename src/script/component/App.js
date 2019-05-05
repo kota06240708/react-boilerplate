@@ -5,19 +5,21 @@ import { createStructuredSelector } from 'reselect';
 import { countUp, countDown } from '../actions/count';
 import Button from './button';
 import { getCountState } from '../selectors';
-import { app, appCount, appNumber, appCounts } from './style.sass';
+import {
+  app, appCount, appNumber, appCounts,
+} from './style.sass';
 
 class App extends Component {
   render() {
     const { count, countUp, countDown } = this.props;
     const buttonName = {
       plus: '+',
-      minus: '-'
+      minus: '-',
     };
 
     const buttonColor = {
       green: 'green',
-      red: 'red'
+      red: 'red',
     };
 
     return (
@@ -45,20 +47,20 @@ class App extends Component {
 }
 
 const mapStateToProps = createStructuredSelector({
-  count: getCountState
+  count: getCountState,
 });
 
 const mapDispatchToProps = dispatch => ({
   ...bindActionCreators(
     {
       countUp,
-      countDown
+      countDown,
     },
-    dispatch
-  )
+    dispatch,
+  ),
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(App);
