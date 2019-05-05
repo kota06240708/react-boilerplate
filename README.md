@@ -1,23 +1,23 @@
 # react-boilerplate
 
-Reactの開発環境です
+Reactの開発環境を構築しました。
 
 > [カウントアップ](https://kota06240708.github.io/react-boilerplate/)
 
 ## Branch
-* **master** - stableなブランチです。
+* **master** - stableなブランチ
 * **develop** - 開発中のブランチ
 
 ## Overview
+* [PUG](https://github.com/pugjs/pug)
+* [React](https://github.com/facebook/react)
+  * [styled-components](https://www.styled-components.com/)
+* [Redux](https://github.com/reduxjs/redux)
+  * [immer](https://github.com/immerjs/immer)
+  * [reselect](https://github.com/reduxjs/reselect)
+* [Flow](https://github.com/facebook/flow)
 
-* [**gulp**](https://github.com/gulpjs/gulp)
-    * [PUG](https://github.com/pugjs/pug)
-* [**webpack**](https://github.com/webpack/webpack)
-    * [React](https://github.com/facebook/react)
-    * [PostCSS](https://github.com/postcss/postcss-loader)
-    * [sass](https://github.com/webpack-contrib/sass-loader)
-
-> gulpはファイル生成とpugを使うのに使っています。
+> pugは静的なhtmlを生成するのに使っています。
 
 ## Install
 
@@ -49,7 +49,7 @@ $ yarn build
 ```sh
 .
 ├── dist       # 開発ファイル
-├── prod       # 本番環境向けのファイル書出先
+├── docs       # 本番環境向けのファイル書出先
 ├── src        # 実際に手を動かすファイル
 ├── server.js  # browser-syncの設定ファイル
 └── system     # ビルド環境
