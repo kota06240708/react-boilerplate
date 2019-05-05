@@ -2,8 +2,6 @@
 
 Reactの開発環境です
 
-> [カウントアップ](https://kota06240708.github.io/react-boilerplate/)
-
 ## Branch
 * **master** - stableなブランチです。
 * **develop** - 開発中のブランチ
