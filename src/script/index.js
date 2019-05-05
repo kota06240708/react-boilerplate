@@ -4,13 +4,14 @@ import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 import App from './component/App';
 import store from './store';
+import GrobalStyles from './styles/global-styles';
 import '@babel/polyfill';
-import '../styles/_base.sass';
 
 const render = (Component) => {
   ReactDOM.render(
     <AppContainer>
       <Provider store={store}>
+        <GrobalStyles />
         <Component />
       </Provider>
     </AppContainer>,

@@ -1,7 +1,6 @@
 // @flow
 import React from 'react';
-import classNames from 'classnames';
-import { button, isGreen, isRed } from './style.sass';
+import styled from 'styled-components';
 
 type Props = {
   name: string,
@@ -9,18 +8,41 @@ type Props = {
   onCount: Function
 };
 
+const ButtonStyle = styled.button`
+  width: 80px;
+  font-size: 2.4rem;
+  padding: 10px;
+  border: solid 1px #ccc;
+  outline: none;
+
+  :active {
+    opacity: 0.4;
+  }
+
+  :last-child {
+    margin-right: none;
+  }
+
+  &.green {
+    :hover {
+      background-color: green;
+    }
+  }
+
+  &.red {
+    :hover {
+      background-color: red;
+    }
+  }
+`;
+
 const Button = (props: Props) => {
   const { name, onCount, color } = props;
-  const className = classNames({
-    [button]: true,
-    [isGreen]: color === 'green',
-    [isRed]: color === 'red',
-  });
 
   return (
-    <button className={className} onClick={onCount}>
+    <ButtonStyle className={color} onClick={onCount}>
       {name}
-    </button>
+    </ButtonStyle>
   );
 };
 export default Button;
