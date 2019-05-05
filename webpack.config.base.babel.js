@@ -1,5 +1,4 @@
 import path from 'path';
-import gulpLoadPlugins from 'gulp-load-plugins';
 
 import autoprefixer from 'autoprefixer';
 import flexbugs from 'postcss-flexbugs-fixes';
