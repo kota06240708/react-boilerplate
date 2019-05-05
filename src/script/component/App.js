@@ -1,47 +1,63 @@
-import React, { Component } from 'react';
+// @flow
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { createStructuredSelector } from 'reselect';
+import styled from 'styled-components';
 import { countUp, countDown } from '../actions/count';
 import Button from './button';
 import { getCountState } from '../selectors';
-import {
-  app, appCount, appNumber, appCounts,
-} from './style.sass';
+
+type Props = {
+  count: ?number,
+  countUp: () => void,
+  countDown: () => void
+};
+
+type State = {
+  plus: string,
+  minus: string
+};
+
+const buttonColor = {
+  green: 'green',
+  red: 'red',
+};
+
+const ButtonWrap = styled.div`
+  display: flex;
+  align-items: center;
+`;
 
 class App extends Component {
-  render() {
-    const { count, countUp, countDown } = this.props;
-    const buttonName = {
+  constructor(props: Props) {
+    super(props);
+    this.state = {
       plus: '+',
       minus: '-',
     };
+  }
 
-    const buttonColor = {
-      green: 'green',
-      red: 'red',
-    };
+  state: State;
 
+  render() {
+    const { count, countUp, countDown } = this.props;
     return (
-      <div className={app}>
-        <p className={appNumber}>{count}</p>
-        <div className={appCount}>
-          <div className={appCounts}>
-            <Button
-              name={buttonName.plus}
-              onCount={countUp}
-              color={buttonColor.green}
-            />
-          </div>
-          <div className={appCounts}>
-            <Button
-              name={buttonName.minus}
-              onCount={countDown}
-              color={buttonColor.red}
-            />
-          </div>
-        </div>
-      </div>
+      <Fragment>
+        <p>{count}</p>
+        <ButtonWrap>
+          <Button
+            name={this.state.plus}
+            onCount={countUp}
+            color={buttonColor.green}
+          />
+          <Button
+            name={this.state.minus}
+            onCount={countDown}
+            color={buttonColor.red}
+          />
+        </ButtonWrap>
+      </Fragment>
     );
   }
 }
