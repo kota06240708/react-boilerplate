@@ -1,5 +1,5 @@
-
 import path from 'path';
+import gulpLoadPlugins from 'gulp-load-plugins';
 
 import autoprefixer from 'autoprefixer';
 import flexbugs from 'postcss-flexbugs-fixes';
@@ -7,7 +7,6 @@ import mixin from 'postcss-mixins';
 import easing from 'postcss-easings';
 import csswring from 'csswring';
 import reporter from 'postcss-reporter';
-import conf from '../config';
 import conf from './system/config';
 
 
