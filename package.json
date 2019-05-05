@@ -7,7 +7,19 @@
     "postinstall": "flow-typed install --skip",
     "start": "node -r @babel/register server.js --watch",
     "prebuild": "rimraf ./docs",
-    "build": "cross-env NODE_ENV=docs gulp build"
+		"build": "cross-env NODE_ENV=docs gulp build",
+		"script:lint": "eslint --fix --ext .js --ignore-path .gitignore ."
+	},
+	"husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "yarn script:lint",
+      "git add --force"
+    ]
   },
   "author": "kota",
   "license": "ISC",
