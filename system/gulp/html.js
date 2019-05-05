@@ -1,4 +1,6 @@
+
 import gulp from 'gulp';
+import gulpLoadPlugins from 'gulp-load-plugins';
 import chalk from 'chalk';
 import browserSync from 'browser-sync';
 import conf from '../config';
