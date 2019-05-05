@@ -7,7 +7,20 @@
     "postinstall": "flow-typed install --skip",
     "start": "node -r @babel/register server.js --watch",
     "prebuild": "rimraf ./docs",
-    "build": "cross-env NODE_ENV=docs gulp build"
+    "build": "cross-env NODE_ENV=docs gulp build",
+    "script:lint": "eslint --fix --ext .js --ignore-path .gitignore .",
+    "lint-staged": "lint-staged"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "yarn script:lint",
+      "git add --force"
+    ]
   },
   "author": "kota",
   "license": "ISC",
@@ -48,6 +61,8 @@
     "gulp-plumber": "^1.2.1",
     "gulp-pug": "^4.0.1",
     "gulp-util": "^3.0.8",
+    "husky": "^2.2.0",
+    "lint-staged": "^8.1.6",
     "node-sass": "^4.11.0",
     "postcss-browser-reporter": "^0.5.0",
     "postcss-easings": "^2.0.0",
@@ -56,6 +71,7 @@
     "postcss-loader": "^3.0.0",
     "postcss-mixins": "^6.2.1",
     "postcss-reporter": "^6.0.0",
+    "pre-commit": "^1.2.2",
     "prerender-spa-plugin": "^3.4.0",
     "prettier": "^1.15.3",
     "prettier-webpack-plugin": "^1.2.0",
