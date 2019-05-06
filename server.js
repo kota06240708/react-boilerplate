@@ -21,7 +21,7 @@ const defaultStatsOptions = {
   cachedAssets: true,
   reasons: true,
   source: true,
-  errorDetails: true,
+  errorDetails: true
 };
 
 const bundle = webpack(webpackConfig);
@@ -36,11 +36,11 @@ browserSync({
     middleware: [
       webpackDevMiddleware(bundle, {
         publicPath: webpackConfig.output.publicPath,
-        stats: defaultStatsOptions,
+        stats: defaultStatsOptions
       }),
-      webpackHotMiddleware(bundle),
-    ],
-  },
+      webpackHotMiddleware(bundle)
+    ]
+  }
 });
 
 gulp.run('pug:dev');

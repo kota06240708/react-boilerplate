@@ -15,7 +15,7 @@ gulp.task('js:prod', () => {
       hash: false,
       timings: false,
       chunks: true,
-      chunkModules: false,
+      chunkModules: false
     }));
   });
 });

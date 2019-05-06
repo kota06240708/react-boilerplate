@@ -7,6 +7,6 @@ export default {
     'last 2 versions',
     'ie 9',
     'ios 7',
-    'android 4.1',
-  ],
+    'android 4.1'
+  ]
 };

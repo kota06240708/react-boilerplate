@@ -2,6 +2,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { fontSize, media } from '../../styles/utils';
+
 type Props = {
   name: string,
   color: string,
@@ -9,11 +11,16 @@ type Props = {
 };
 
 const ButtonStyle = styled.button`
+  ${fontSize(14)};
+
   width: 80px;
-  font-size: 2.4rem;
   padding: 10px;
   border: solid 1px #ccc;
   outline: none;
+
+  ${media.handheld`
+    width: 270px;
+  `}
 
   :active {
     opacity: 0.4;
