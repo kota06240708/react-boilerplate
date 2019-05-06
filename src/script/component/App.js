@@ -10,6 +10,7 @@ import { getCountState } from '../selectors';
 
 import Button from './button';
 import Gsap from './animation/gsap';
+import Swiper from './animation/swiper';
 
 type Props = {
   count: number,
@@ -54,6 +55,7 @@ class App extends Component {
           <Button name={this.state.minus} onCount={countDown} color={buttonColor.red} />
         </ButtonWrap>
         <Gsap />
+        <Swiper />
       </Fragment>
     );
   }
