@@ -29,7 +29,7 @@ class App extends Component {
     super(props);
     this.state = {
       plus: '+',
-      minus: '-',
+      minus: '-'
     };
   }
 
@@ -40,23 +40,15 @@ class App extends Component {
 
     const buttonColor = {
       green: 'green',
-      red: 'red',
+      red: 'red'
     };
 
     return (
       <Fragment>
         <p>{count}</p>
         <ButtonWrap>
-          <Button
-            name={this.state.plus}
-            onCount={countUp}
-            color={buttonColor.green}
-          />
-          <Button
-            name={this.state.minus}
-            onCount={countDown}
-            color={buttonColor.red}
-          />
+          <Button name={this.state.plus} onCount={countUp} color={buttonColor.green} />
+          <Button name={this.state.minus} onCount={countDown} color={buttonColor.red} />
         </ButtonWrap>
       </Fragment>
     );
@@ -64,20 +56,20 @@ class App extends Component {
 }
 
 const mapStateToProps = createStructuredSelector({
-  count: getCountState,
+  count: getCountState
 });
 
 const mapDispatchToProps = dispatch => ({
   ...bindActionCreators(
     {
       countUp,
-      countDown,
+      countDown
     },
-    dispatch,
-  ),
+    dispatch
+  )
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(App);
