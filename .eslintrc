@@ -28,7 +28,14 @@
         "no-param-reassign": "off",
 				"default-case": "off",
 				"no-mixed-spaces-and-tabs": "off",
-        "object-shorthand": ["error", "always"]
+				"object-shorthand": ["error", "always"],
+				"comma-dangle": ["error", {
+					"arrays": "never",
+					"objects": "never",
+					"imports": "never",
+					"exports": "never",
+					"functions": "ignore"
+				}]
     },
     "parser": "babel-eslint",
     "parserOptions": {

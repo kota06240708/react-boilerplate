@@ -21,8 +21,8 @@ const postCSSLoaderOptions = {
       { browsers: conf.browsers },
     ),
     csswring(),
-    reporter(),
-  ],
+    reporter()
+  ]
 };
 
 export default {
@@ -32,7 +32,7 @@ export default {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        include: path.join(__dirname, conf.src),
+        include: path.join(__dirname, conf.src)
       },
       {
         enforce: 'pre',
@@ -41,8 +41,8 @@ export default {
         loader: 'eslint-loader',
         options: {
           fix: true,
-          failOnWarning: true,
-        },
+          failOnWarning: true
+        }
       },
       {
         test: /\.css$/,
@@ -51,10 +51,10 @@ export default {
           {
             loader: 'css-loader',
             options: {
-              minimize: true,
-            },
-          },
-        ],
+              minimize: true
+            }
+          }
+        ]
       },
       {
         test: /\.(scss|sass)$/,
@@ -65,18 +65,18 @@ export default {
             options: {
               url: false,
               modules: true,
-              importLoaders: 2,
-            },
+              importLoaders: 2
+            }
           },
           {
             loader: 'postcss-loader',
-            options: postCSSLoaderOptions,
+            options: postCSSLoaderOptions
           },
           {
-            loader: 'sass-loader',
-          },
-        ],
-      },
-    ],
-  },
+            loader: 'sass-loader'
+          }
+        ]
+      }
+    ]
+  }
 };

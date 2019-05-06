@@ -2,7 +2,7 @@ import produce from 'immer';
 import { COUNT_UP, COUNT_DOWN } from '../actions/count';
 
 const initialState = {
-  count: 0,
+  count: 0
 };
 
 export default (state = initialState, action) => produce(state, (draft) => {

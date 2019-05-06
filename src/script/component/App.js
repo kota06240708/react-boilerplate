@@ -4,9 +4,12 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import styled from 'styled-components';
+
 import { countUp, countDown } from '../actions/count';
-import Button from './button';
 import { getCountState } from '../selectors';
+
+import Button from './button';
+import Gsap from './animation/gsap';
 
 type Props = {
   count: number,
@@ -29,7 +32,7 @@ class App extends Component {
     super(props);
     this.state = {
       plus: '+',
-      minus: '-',
+      minus: '-'
     };
   }
 
@@ -40,7 +43,7 @@ class App extends Component {
 
     const buttonColor = {
       green: 'green',
-      red: 'red',
+      red: 'red'
     };
 
     return (
@@ -58,26 +61,27 @@ class App extends Component {
             color={buttonColor.red}
           />
         </ButtonWrap>
+        <Gsap />
       </Fragment>
     );
   }
 }
 
 const mapStateToProps = createStructuredSelector({
-  count: getCountState,
+  count: getCountState
 });
 
 const mapDispatchToProps = dispatch => ({
   ...bindActionCreators(
     {
       countUp,
-      countDown,
+      countDown
     },
-    dispatch,
-  ),
+    dispatch
+  )
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(App);

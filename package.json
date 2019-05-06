@@ -90,9 +90,11 @@
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
     "classnames": "^2.2.6",
+    "gsap": "^2.1.2",
     "immer": "^1.9.3",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
+    "react-gsap-enhancer": "^0.3.0",
     "react-redux": "^6.0.0",
     "redux": "^4.0.1",
     "redux-logger": "^3.0.6",
