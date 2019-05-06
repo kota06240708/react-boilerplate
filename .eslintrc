@@ -35,7 +35,9 @@
 					"imports": "never",
 					"exports": "never",
 					"functions": "ignore"
-				}]
+				}],
+				"arrow-parens": ["error", "as-needed"],
+				"implicit-arrow-linebreak": ["error", "beside"]
     },
     "parser": "babel-eslint",
     "parserOptions": {
