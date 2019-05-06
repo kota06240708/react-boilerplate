@@ -29,7 +29,13 @@
 			"default-case": "off",
 			"no-mixed-spaces-and-tabs": "off",
 			"object-shorthand": ["error", "always"],
-			"comma-dangle": "off",
+			"comma-dangle": ["error", {
+				"arrays": "never",
+				"objects": "never",
+				"imports": "never",
+				"exports": "never",
+				"functions": "ignore"
+			}],
 			"arrow-parens": ["error", "as-needed"],
 			"implicit-arrow-linebreak": "off"
 	},
