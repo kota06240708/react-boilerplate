@@ -29,7 +29,7 @@ class App extends Component {
     super(props);
     this.state = {
       plus: '+',
-      minus: '-',
+      minus: '-'
     };
   }
 
@@ -40,7 +40,7 @@ class App extends Component {
 
     const buttonColor = {
       green: 'green',
-      red: 'red',
+      red: 'red'
     };
 
     return (
@@ -64,20 +64,20 @@ class App extends Component {
 }
 
 const mapStateToProps = createStructuredSelector({
-  count: getCountState,
+  count: getCountState
 });
 
 const mapDispatchToProps = dispatch => ({
   ...bindActionCreators(
     {
       countUp,
-      countDown,
+      countDown
     },
-    dispatch,
-  ),
+    dispatch
+  )
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(App);

@@ -7,7 +7,7 @@ import store from './store';
 import GrobalStyles from './styles/global-styles';
 import '@babel/polyfill';
 
-const render = (Component) => {
+const render = Component => {
   ReactDOM.render(
     <AppContainer>
       <Provider store={store}>
@@ -15,7 +15,7 @@ const render = (Component) => {
         <Component />
       </Provider>
     </AppContainer>,
-    document.getElementById('root'),
+    document.getElementById('root')
   );
 };
 
