@@ -13,14 +13,14 @@ gulp.task('reload', () => browserReload());
 gulp.task('pug:dev', () => {
   console.log(chalk.gray.bgRed.bold('pug:dev--->'));
   gulp.src([
-    `${conf.src}/**/!(_)*.pug`,
+    `${conf.src}/**/!(_)*.pug`
   ])
     .pipe($.plumber({
-      errorHandler: $.notify.onError('Error: <%= error.message %>'),
+      errorHandler: $.notify.onError('Error: <%= error.message %>')
     }))
     .pipe($.pug({
       pretty: true,
-      cache: true,
+      cache: true
     }))
     .pipe(gulp.dest(conf.dist));
 });
@@ -28,14 +28,14 @@ gulp.task('pug:dev', () => {
 gulp.task('pug:prod', () => {
   console.log(chalk.gray.bgRed.bold('pug:prod--->'));
   return gulp.src([
-    `${conf.src}/**/!(_)*.pug`,
+    `${conf.src}/**/!(_)*.pug`
   ])
     .pipe($.plumber({
-      errorHandler: $.notify.onError('Error: <%= error.message %>'),
+      errorHandler: $.notify.onError('Error: <%= error.message %>')
     }))
     .pipe($.pug({
       pretty: false,
-      cache: false,
+      cache: false
     }))
     .pipe(gulp.dest(process.env.NODE_ENV));
 });

@@ -9,8 +9,8 @@ import baseConfig from './webpack.config.base.babel';
 
 const entries = {
   'script/index': [
-    './src/script/index.js',
-  ],
+    './src/script/index.js'
+  ]
 };
 
 export default merge(baseConfig, {
@@ -18,23 +18,23 @@ export default merge(baseConfig, {
 
   output: {
     path: `${path.resolve('')}/${process.env.NODE_ENV}`,
-    filename: '[name].bundle.js',
+    filename: '[name].bundle.js'
   },
   mode: 'production',
   performance: { hints: false },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     }),
     new UglifyJsPlugin({
       uglifyOptions: {
         output: {
           beautify: false,
-          comments: saveLicense,
+          comments: saveLicense
         },
         ie8: false,
-        warnings: false,
-      },
-    }),
-  ],
+        warnings: false
+      }
+    })
+  ]
 });
