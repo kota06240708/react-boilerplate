@@ -47,16 +47,8 @@ class App extends Component {
       <Fragment>
         <p>{count}</p>
         <ButtonWrap>
-          <Button
-            name={this.state.plus}
-            onCount={countUp}
-            color={buttonColor.green}
-          />
-          <Button
-            name={this.state.minus}
-            onCount={countDown}
-            color={buttonColor.red}
-          />
+          <Button name={this.state.plus} onCount={countUp} color={buttonColor.green} />
+          <Button name={this.state.minus} onCount={countDown} color={buttonColor.red} />
         </ButtonWrap>
       </Fragment>
     );
