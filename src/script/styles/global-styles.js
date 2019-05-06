@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
+// import css1 from "slick-carousel/slick/slick.css";
+// import css2 from "slick-carousel/slick/slick-theme.css";
 
 const GlobalStyles = createGlobalStyle`
 	${reset}
