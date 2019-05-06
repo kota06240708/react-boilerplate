@@ -37,7 +37,7 @@
 					"functions": "ignore"
 				}],
 				"arrow-parens": ["error", "as-needed"],
-				"implicit-arrow-linebreak": ["error", "beside"]
+				"implicit-arrow-linebreak": "off"
     },
     "parser": "babel-eslint",
     "parserOptions": {
