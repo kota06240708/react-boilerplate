@@ -11,6 +11,7 @@ import { getCountState } from '../selectors';
 import Button from './button';
 import Gsap from './animation/gsap';
 import Swiper from './animation/swiper';
+import Slick from './animation/slick';
 
 type Props = {
   count: number,
@@ -56,6 +57,7 @@ class App extends Component {
         </ButtonWrap>
         <Gsap />
         <Swiper />
+        <Slick />
       </Fragment>
     );
   }
