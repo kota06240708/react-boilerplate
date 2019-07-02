@@ -2,12 +2,6 @@
 
 Reactの開発環境を構築しました。
 
-> [カウントアップ](https://kota06240708.github.io/react-boilerplate/)
-
-## Branch
-* **master** - stableなブランチ
-* **develop** - 開発中のブランチ
-
 ## Overview
 * [PUG](https://github.com/pugjs/pug)
 * [React](https://github.com/facebook/react)
