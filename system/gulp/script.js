@@ -5,7 +5,7 @@ import webpackConfig from '../../webpack.config.prod.babel';
 
 gulp.task('js:prod', () => {
   const webpackSetting = webpack(webpackConfig);
-  webpackSetting.run((err, stats) => {
+  return webpackSetting.run((err, stats) => {
     if (err) {
       throw new Error('webpack build failed');
     }

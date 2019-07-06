@@ -43,5 +43,4 @@ browserSync({
   }
 });
 
-gulp.run('pug:dev');
-gulp.watch('./src/**/*.pug', ['pug:dev', 'reload']);
+gulp.watch('./src/**/*.pug', gulp.parallel('pug:dev', 'reload'));

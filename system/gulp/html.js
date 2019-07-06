@@ -12,9 +12,9 @@ gulp.task('reload', () => browserReload());
 
 gulp.task('pug:dev', () => {
   console.log(chalk.gray.bgRed.bold('pug:dev--->'));
-  gulp.src([
+  return gulp.src(
     `${conf.src}/**/!(_)*.pug`
-  ])
+  )
     .pipe($.plumber({
       errorHandler: $.notify.onError('Error: <%= error.message %>')
     }))
@@ -27,9 +27,9 @@ gulp.task('pug:dev', () => {
 
 gulp.task('pug:prod', () => {
   console.log(chalk.gray.bgRed.bold('pug:prod--->'));
-  return gulp.src([
+  return gulp.src(
     `${conf.src}/**/!(_)*.pug`
-  ])
+  )
     .pipe($.plumber({
       errorHandler: $.notify.onError('Error: <%= error.message %>')
     }))

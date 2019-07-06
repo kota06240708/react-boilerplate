@@ -1,11 +1,14 @@
 import gulp from 'gulp';
 import conf from '../config';
 
-gulp.task('build', () => {
-  gulp.run('pug:prod');
-
-  gulp.src(`./${conf.src}/**/*.+(jpg|jpeg|png|gif|svg)`)
-    .pipe(gulp.dest(process.env.NODE_ENV));
-
-  gulp.run('js:prod');
-});
+gulp.task('build',
+	gulp.series(
+		'pug:prod',
+		() => {
+			return gulp
+				.src(`./${conf.src}/**/*.+(jpg|jpeg|png|gif|svg)`)
+				.pipe(gulp.dest(process.env.NODE_ENV));
+		},
+		'js:prod'
+	)
+);
